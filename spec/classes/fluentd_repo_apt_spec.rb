@@ -31,21 +31,21 @@ describe 'fluentd::repo::apt', :type => :class do
           when 'precise'
             it {
               should contain_apt__source('treasure-data').with({
-                'location'     => 'http://packages.treasuredata.com/2/ubuntu/precise',
+                'location'     => 'http://packages.treasuredata.com/3/ubuntu/precise',
                 'release'      => 'precise'
               })
             }
           when 'trusty'
             it {
               should contain_apt__source('treasure-data').with({
-                'location'     => 'http://packages.treasuredata.com/2/ubuntu/trusty',
+                'location'     => 'http://packages.treasuredata.com/3/ubuntu/trusty',
                 'release'      => 'trusty'
               })
             }
           when 'xenial'
             it {
               should contain_apt__source('treasure-data').with({
-                'location'     => 'http://packages.treasuredata.com/2/ubuntu/xenial',
+                'location'     => 'http://packages.treasuredata.com/3/ubuntu/xenial',
                 'release'      => 'xenial'
               })
             }
@@ -55,21 +55,21 @@ describe 'fluentd::repo::apt', :type => :class do
           when 'jessie'
             it {
               should contain_apt__source('treasure-data').with({
-                'location'     => 'http://packages.treasuredata.com/2/debian/jessie',
+                'location'     => 'http://packages.treasuredata.com/3/debian/jessie',
                 'release'      => 'jessie'
               })
           }
           when 'squeeze'
             it {
               should contain_apt__source('treasure-data').with({
-                'location'     => 'http://packages.treasuredata.com/2/debian/squeeze',
+                'location'     => 'http://packages.treasuredata.com/3/debian/squeeze',
                 'release'      => 'squeeze'
               })
             }
           when 'wheezy'
             it {
               should contain_apt__source('treasure-data').with({
-                'location'     => 'http://packages.treasuredata.com/2/debian/wheezy',
+                'location'     => 'http://packages.treasuredata.com/3/debian/wheezy',
                 'release'      => 'wheezy'
               })
             }
