@@ -26,5 +26,5 @@ class fluentd::repo::apt (
     repos        => $repos,
     key          => $key,
     include      => $include,
-  }
+  } -> Class['apt::update']
 }
