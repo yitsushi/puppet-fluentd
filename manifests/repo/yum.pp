@@ -9,10 +9,16 @@ class fluentd::repo::yum (
   $gpgkey   = 'https://packages.treasuredata.com/GPG-KEY-td-agent',
 ) {
 
+  if $::operatingsystem == 'Amazon' {
+    $realurl = 'http://packages.treasuredata.com/3/amazon/2/$releasever/$basearch'
+  } else {
+    $realurl = $baseurl
+  }
+
   yumrepo { 'treasure-data':
     ensure   => $ensure,
     descr    => $descr,
-    baseurl  => $baseurl,
+    baseurl  => $realurl,
     enabled  => $enabled,
     gpgcheck => $gpgcheck,
     notify   => Exec['add GPG key'],
